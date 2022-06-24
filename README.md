@@ -2,7 +2,7 @@
 JavaScript Basics for Beginners by Mosh Hamedani
 
 Course structure:
-  1 - Getting Started 
+  1 - Getting Started ✔✨
   2 - Basics 
   3 - Operators
   4 - Control Flow
