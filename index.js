@@ -229,12 +229,12 @@ const video3 = {
 video3.showTags();
 
 function playVideos() {
-  console.log(this);
+  console.log(this.name, "Play videos");
 }
 
-playVideos.call({ name: "Shoxrux" }, 1, 2);
-playVideos.apply({ name: "Shoxrux" }, [1, 2]);
-const func = playVideos.bind({ name: "Shoxrux Func" });
+playVideos.call({ name: "ShoxruxCall" }, 1, 2);
+playVideos.apply({ name: "ShoxruxApply" }, [1, 2]);
+const func = playVideos.bind({ name: "ShoxruxBind" });
 func();
 playVideos();
 
