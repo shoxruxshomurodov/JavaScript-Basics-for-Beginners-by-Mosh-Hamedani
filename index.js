@@ -91,4 +91,38 @@ while (numbersEmpty.length > 0) {
 }
 console.log(numbersEmpty); // []
 console.log(anotherNumbers); // []
+
+//✌✌✌ Combining and Slicing Arrays ✌✌✌
+const first = [1, 2, 3];
+const second = [4, 5, 6, 7];
+//Concat
+const concated = first.concat(second);
+console.log(concated); // [1, 2, 3, 4, 5, 6, 7]
+//Slice
+// const slice = concated.slice(2, 4);
+// console.log(slice); // [3, 4]
+
+const slice = concated.slice(2);
+console.log(slice); // [3, 4 , 5, 6, 7]
+
+//✌✌✌ The Spread Operator ✌✌✌
+const a = [1, 2, 3, 4, 5, 6, 7];
+const b = [8, 9, 10];
+const spread = [...a, ...b];
+console.log(spread); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//✌✌✌  Iterating an Array ✌✌✌
+const iterate = [1, 2, 3, 4, 5, 6, 7];
+for (let number of iterate) {
+  console.log(number); // 1, 2, 3, 4, 5, 6, 7
+}
+
+iterate.forEach((number) => {
+  console.log(number); // 1, 2, 3, 4, 5, 6, 7
+});
+
+iterate.map((number) => {
+  console.log(number); // 1, 2, 3, 4, 5, 6,
+});
+
 //🏋️‍♂️🏋️‍♂️🏋️‍♂️ Prime Numbers🏋️‍♂️🏋️‍♂️🏋️‍♂️
