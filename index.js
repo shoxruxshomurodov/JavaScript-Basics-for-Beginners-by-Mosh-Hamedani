@@ -27,3 +27,12 @@ console.log("first");
 //✌✌✌ Finding Elements (Reference Types) ✌✌✌
 
 //🏋️‍♂️🏋️‍♂️🏋️‍♂️ Prime Numbers🏋️‍♂️🏋️‍♂️🏋️‍♂️
+function findOccurrences(array, searchElement) {
+  let occurence = 0;
+  array.reduce((acc, curr) => {
+    occurence = curr === searchElement ? 1 : 0;
+    return (occurence = +curr);
+  }, 0);
+  return occurence;
+}
+console.log(findOccurrences([1, 2, 3, 1, 1, 4], 1));
