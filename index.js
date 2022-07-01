@@ -125,4 +125,76 @@ iterate.map((number) => {
   console.log(number); // 1, 2, 3, 4, 5, 6,
 });
 
+//✌✌✌ Joining Arrays ✌✌✌
+//join() return string
+const numberJoin = [1, 2, 3, 4, 5, 6, 7];
+const joined = numberJoin.join(",");
+console.log(joined); // 1, 2, 3, 4, 5, 6
+
+const message = "this is my first message";
+const parts = message.split(" ");
+console.log(parts); // 0 : "this", 1 : "is", 2 : "my", 3 : "first", 4 : "message"
+const partsJoin = parts.join("-");
+console.log(partsJoin); //this-is-my-first-message
+
+//✌✌✌ Sorting Arrays ✌✌✌
+const sortedArrays = [1, 7, 3, 4, 2];
+sortedArrays.sort();
+console.log(sortedArrays); // [ 1, 2, 3, 4, 7 ]
+
+//A > a , B > b
+const coursess = [
+  {
+    id: 1,
+    name: "Node JS",
+  },
+  {
+    id: 2,
+    name: "Javascript",
+  },
+];
+
+coursess.sort(function (a, b) {
+  if (a.name < b.name) return -1;
+  else if (a.name > b.name) return 1;
+  return 0;
+});
+
+console.log(coursess); //[ { id: 2, name: 'Javascript' }, { id: 1, name: 'Node JS' } ]
+
+//✌✌✌ Testing the Elements of an Array ✌✌✌
+const testingNumbers = [1, 2, 3, -4, 5, 6];
+const allPositive = testingNumbers.every(function (value) {
+  return value >= 0;
+});
+console.log(allPositive); // false
+
+const atLeastOnePositive = testingNumbers.some(function (value) {
+  return value >= 0;
+});
+
+console.log(atLeastOnePositive); // true
+
+//✌✌✌  Filtering an Array ✌✌✌
+
+const filterNumber = [1, 2, 3, 4, -5, 6, 7];
+const filtered = filterNumber.filter((value) => {
+  return value >= 0;
+});
+console.log(filtered); // [ 1, 2, 3, 4, 6, 7 ]
+
+mapNumbers = [1, 2, 3, 4, -5, 6, 7];
+
+const mapItems = mapNumbers.map((n) => "<li>" + n + "</li>");
+console.log(mapItems);
+/*
+['<li>1</li>',
+'<li>2</li>',
+'<li>3</li>',
+'<li>4</li>',
+'<li>-5</li>',
+'<li>6</li>',
+'<li>7</li>' ] */
+
+// ✌✌✌  Mapping an Array ✌✌✌
 //🏋️‍♂️🏋️‍♂️🏋️‍♂️ Prime Numbers🏋️‍♂️🏋️‍♂️🏋️‍♂️
