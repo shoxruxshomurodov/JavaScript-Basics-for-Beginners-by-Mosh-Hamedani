@@ -1,4 +1,5 @@
 # JavaScript-Basics-for-Beginners-by-Mosh-Hamedani
+🔥JavaScript - Master the Fundamentals in 6 Hours🔥
 
 1.  Getting Started
 2.  Basics 
