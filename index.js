@@ -183,18 +183,186 @@ const filtered = filterNumber.filter((value) => {
 });
 console.log(filtered); // [ 1, 2, 3, 4, 6, 7 ]
 
+// ✌✌✌  Mapping an Array ✌✌✌
 mapNumbers = [1, 2, 3, 4, -5, 6, 7];
 
 const mapItems = mapNumbers.map((n) => "<li>" + n + "</li>");
 console.log(mapItems);
+
+const items = mapNumbers.map((n) => {
+  const obj = { value: n };
+  return obj;
+});
+console.log(items);
 /*
 ['<li>1</li>',
 '<li>2</li>',
 '<li>3</li>',
 '<li>4</li>',
-'<li>-5</li>',
+'<li>-5</li>',`
 '<li>6</li>',
 '<li>7</li>' ] */
 
-// ✌✌✌  Mapping an Array ✌✌✌
-//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Prime Numbers🏋️‍♂️🏋️‍♂️🏋️‍♂️
+// ✌✌✌  Reducing an Array ✌✌✌
+const reduceArr = [1, -1, 2, 3, 4, 5];
+let sum = 0;
+for (let n of reduceArr) {
+  sum += n;
+}
+console.log(sum); //14
+
+const reduced = reduceArr.reduce((acc, curr) => {
+  return (acc += curr);
+}, 0);
+
+console.log(reduced); //14
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Array from Range🏋️‍♂️🏋️‍♂️🏋️‍♂️
+
+const rangeNumber = arrayFromRange(-11, 5);
+console.log(rangeNumber);
+function arrayFromRange(min, max) {
+  let range = [];
+  for (let i = min; i <= max; i++) {
+    range.push(i);
+  }
+  return range;
+}
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Includes🏋️‍♂️🏋️‍♂️🏋️‍♂️
+const includeNumbers = [1, 2, 3, 4, 5, 7, 9];
+function include(array, searchElement) {
+  for (let i = 0; i < array.length; i++) {
+    if (searchElement === i) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+console.log(include(includeNumbers, 16));
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Except🏋️‍♂️🏋️‍♂️🏋️‍♂️
+const exceptNumbers = [1, 2, 3, 4];
+function except(array, excluded) {
+  const output = [];
+  if (Array.isArray(excluded)) {
+    for (let element of array)
+      if (!excluded.includes(element)) {
+        output.push(element);
+      }
+  } else {
+    return "exluded is not array";
+  }
+  return output;
+}
+console.log(except(exceptNumbers, [3]));
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Moving an Element 🏋️‍♂️🏋️‍♂️🏋️‍♂️
+const movingNumbers = [1, 2, 3, 4, 7];
+const result = move(movingNumbers, 4, 1);
+console.log(result);
+
+function move(array, index, offset) {
+  const position = index + offset;
+  if (position >= array.length) {
+    console.error("Invalid offset");
+  } else {
+    const output = [...array];
+    const element = output.splice(index, 1)[0];
+    output.splice(position, 0, element);
+    return output;
+  }
+}
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Count Occurrences 🏋️‍♂️🏋️‍♂️🏋️‍♂️
+
+const occurenceNumbers = [1, 2, 3, 3, 3, 4, 5];
+const count = countOccurrences(occurenceNumbers, 3);
+console.log(count);
+function countOccurrences(array, searchElement) {
+  // let count = 0;
+  // for (let i = 0; i <= array.length; i++) {
+  //   if (array[i] === searchElement) {
+  //     count++;
+  //   }
+  // }
+  // return count;
+  return array.reduce((acc, curr) => {
+    const occurence = curr === searchElement ? 1 : 0;
+    return acc + occurence;
+  }, 0);
+}
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Get Max 🏋️‍♂️🏋️‍♂️🏋️‍♂️
+const maxNumbers = [1, 2, 3, 3, 3, 4, 5, 6];
+const max = getMax(maxNumbers);
+console.log(max);
+
+function getMax(array) {
+  if (array.length === 0) {
+    return undefined;
+  }
+  // let max = 0;
+  // for (let i = 0; i <= array.length; i++) {
+  //   if (max < array[i]) {
+  //     max = array[i];
+  //   }
+  // }
+  // return max;
+
+  // let max = 0;
+  // return array.reduce((acc, curr) => {
+  //   max = curr > max ? curr : max;
+  //   return (acc = max);
+  // });
+
+  return array.reduce((acc, curr) => {
+    return curr > acc ? curr : acc;
+  });
+}
+
+//🏋️‍♂️🏋️‍♂️🏋️‍♂️ Movies 🏋️‍♂️🏋️‍♂️🏋️‍♂️
+
+// All all movies in 2017 with rating  > 4
+// Sort them by their rating
+// Descending order
+// Pick their title
+const movies = [
+  {
+    title: "A",
+    year: 2021,
+    rating: 4.5,
+  },
+  {
+    title: "B",
+    year: 2017,
+    rating: 4.8,
+  },
+  {
+    title: "C",
+    year: 2017,
+    rating: 3,
+  },
+  {
+    title: "D",
+    year: 2017,
+    rating: 4.5,
+  },
+  {
+    title: "F",
+    year: 2013,
+    rating: 4.5,
+  },
+];
+
+function moviesSort(movies) {
+  const titles = movies
+    .filter((movie) => movie.year === 2017 && movie.rating >= 4)
+    .sort((a, b) => a.rating - b.rating)
+    .reverse()
+    .map((m) => m.title);
+  console.log(titles);
+}
+
+moviesSort(movies);
